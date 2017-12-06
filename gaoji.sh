@@ -8,6 +8,6 @@ if [ "$shuru" == "" ]; then
   exit 1
 elif [[ "$shuru"=="1" ]]; then
   wget -N --no-check-certificate https://softs.fun/Bash/ssr.sh && chmod +x ssr.sh && bash ssr.sh
-elif [[ "$shuru"="2" ]]; then
+elif [[ "$shuru"=="2" ]]; then
   wget -N --no-check-certificate https://github.com/nanqinlang-tcp/tcp_nanqinlang/releases/download/3.1/tcp_nanqinlang_3.1.sh&&chmod +x tcp_nanqinlang_3.1.sh&&bash tcp_nanqinlang_3.1.sh
 fi
