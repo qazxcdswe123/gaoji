@@ -7,7 +7,12 @@ if [ "$shuru" == "" ]; then
   echo "未选择序号，脚本退出"
   exit 1
 elif [[ "$shuru"=="1" ]]; then
-  wget -N --no-check-certificate https://softs.fun/Bash/ssr.sh && chmod +x ssr.sh && bash ssr.sh
+  "need"=="1"
 elif [[ "$shuru"=="2" ]]; then
-  wget -N --no-check-certificate https://github.com/nanqinlang-tcp/tcp_nanqinlang/releases/download/3.1/tcp_nanqinlang_3.1.sh&&chmod +x tcp_nanqinlang_3.1.sh&&bash tcp_nanqinlang_3.1.sh
+  "need"=="2"
+fi
+if [[ "need"=="1" ]]; then
+  wget -N --no-check-certificate https://softs.fun/Bash/ssr.sh && chmod +x ssr.sh && bash ssr.sh
+elif [[ "need"="2" ]]; then
+  wget -N --no-check-certificate https://github.com/nanqinlang-tcp/tcp_nanqinlang/releases/download/3.1/tcp_nanqinlang_3.1.shbash tcp_nanqinlang_3.1.sh
 fi
