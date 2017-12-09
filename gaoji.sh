@@ -14,25 +14,14 @@ echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
 	stty erase '^H' && read -p "(默认: 取消):" need
 	[[ -z "${need}" ]] && echo "已取消..." && exit 1
 	if [[ ${need} == "1" ]]; then
-		Install_SSR
+                wget -N --no-check-certificate https://softs.fun/Bash/ssr.sh && chmod +x ssr.sh && bash ssr.sh
 	elif [[ ${need} == "2" ]]; then
-		  wget -N --no-check-certificate https://github.com/nanqinlang-tcp/tcp_nanqinlang/releases/download/3.1/tcp_nanqinlang_3.1.sh&&bash tcp_nanqinlang_3.1.sh tcp_nanqinlang_3.1.sh
+		wget -N --no-check-certificate https://github.com/nanqinlang-tcp/tcp_nanqinlang/releases/download/3.1/tcp_nanqinlang_3.1.sh&&bash tcp_nanqinlang_3.1.sh tcp_nanqinlang_3.1.sh
 	elif [[ ${need} == "3" ]]; then
-		Install_fail2ban
+		wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/fail2ban.sh && bash fail2ban.sh 2>&1 | tee fail2ban.log
 	elif [[ ${need} == "4" ]]; then
-		Install_lnmp
+		wget -c http://soft.vpser.net/lnmp/lnmp1.4-full.tar.gz && tar zxf lnmp1.4-full.tar.gz && cd lnmp1.4-full && ./install.sh lnmp
+
 	else
 		echo -e "${Error} 请输入正确的数字(1-4)" && exit 1
 	fi
-}
-Install_SSR(){
-  wget -N --no-check-certificate https://softs.fun/Bash/ssr.sh && chmod +x ssr.sh && bash ssr.sh
-}
-Install_BBR(){
-  wget -N --no-check-certificate https://github.com/nanqinlang-tcp/tcp_nanqinlang/releases/download/3.1/tcp_nanqinlang_3.1.sh&&bash tcp_nanqinlang_3.1.sh tcp_nanqinlang_3.1.sh
-}
-Install_fail2ban(){
-wget https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/fail2ban.sh && bash fail2ban.sh 2>&1 | tee fail2ban.log
-}
-Install_lnmp(){
-wget -c http://soft.vpser.net/lnmp/lnmp1.4-full.tar.gz && tar zxf lnmp1.4-full.tar.gz && cd lnmp1.4-full && ./install.sh lnmp
