@@ -6,7 +6,7 @@
  ${Green_font_prefix}2.${Font_color_suffix} 安装 BBR
  ${Green_font_prefix}3.${Font_color_suffix} 安装 fail2ban
  ${Green_font_prefix}4.${Font_color_suffix} 安装 lnmp (网站)
- ${Green_font_prefix}5.${Font_color_suffix} 安装 ASF挂卡(steam) && echo
+ ${Green_font_prefix}5.${Font_color_suffix} 安装 ASF挂卡(steam) " && echo
 echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
 1. 用putty装||||先在ssr脚本装无改版
 2. 本脚本仅支持 Debian / Ubuntu 系统更换内核，OpenVZ和Docker 不支持更换内核
