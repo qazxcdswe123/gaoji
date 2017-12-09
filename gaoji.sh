@@ -3,7 +3,6 @@
 	echo && echo -e "  你要做什么？
 	
  ${Green_font_prefix}1.${Font_color_suffix} 安装 SSR
-————————
  ${Green_font_prefix}2.${Font_color_suffix} 安装 BBR
  ${Green_font_prefix}3.${Font_color_suffix} 安装 fail2ban
  ${Green_font_prefix}4.${Font_color_suffix} 安装 lnmp" && echo
