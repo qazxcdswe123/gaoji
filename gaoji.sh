@@ -14,5 +14,5 @@ fi
 if [[ "need"=="1" ]]; then
   wget -N --no-check-certificate https://softs.fun/Bash/ssr.sh && chmod +x ssr.sh && bash ssr.sh
 elif [[ "need"="2" ]]; then
-  wget -N --no-check-certificate https://github.com/nanqinlang-tcp/tcp_nanqinlang/releases/download/3.1/tcp_nanqinlang_3.1.shbash tcp_nanqinlang_3.1.sh
+  wget -N --no-check-certificate https://github.com/nanqinlang-tcp/tcp_nanqinlang/releases/download/3.1/tcp_nanqinlang_3.1.sh&&bash tcp_nanqinlang_3.1.sh tcp_nanqinlang_3.1.sh
 fi
