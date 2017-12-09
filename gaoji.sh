@@ -16,7 +16,7 @@ echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
 	if [[ ${need} == "1" ]]; then
 		Install_SSR
 	elif [[ ${need} == "2" ]]; then
-		Install_BBR
+		  wget -N --no-check-certificate https://github.com/nanqinlang-tcp/tcp_nanqinlang/releases/download/3.1/tcp_nanqinlang_3.1.sh&&bash tcp_nanqinlang_3.1.sh tcp_nanqinlang_3.1.sh
 	elif [[ ${need} == "3" ]]; then
 		Install_fail2ban
 	elif [[ ${need} == "4" ]]; then
