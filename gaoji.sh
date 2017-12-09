@@ -1,5 +1,8 @@
 #!/bin/bash
 #选择
+apt-get update
+apt-get install screen
+screen -S gaoji
 	echo && echo -e "  你要做什么？
 	
  ${Green_font_prefix}1.${Font_color_suffix} 安装 SSR
