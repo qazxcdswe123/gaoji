@@ -16,7 +16,7 @@ echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
 	if [[ ${need} == "1" ]]; then
                 wget -N --no-check-certificate https://softs.fun/Bash/ssr.sh && chmod +x ssr.sh && bash ssr.sh
 	elif [[ ${need} == "2" ]]; then
-		wget -N --no-check-certificate https://github.com/nanqinlang-tcp/tcp_nanqinlang/releases/download/3.1/tcp_nanqinlang_3.1.sh&&bash tcp_nanqinlang_3.1.sh tcp_nanqinlang_3.1.sh
+		wget -N --no-check-certificate https://github.com/nanqinlang-tcp/tcp_nanqinlang/releases/download/3.1/tcp_nanqinlang_3.1.sh&&bash tcp_nanqinlang_3.1.sh
 	elif [[ ${need} == "3" ]]; then
 		wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/fail2ban.sh && bash fail2ban.sh 2>&1 | tee fail2ban.log
 	elif [[ ${need} == "4" ]]; then
