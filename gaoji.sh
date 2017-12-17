@@ -1,15 +1,16 @@
 #!/bin/bash
 #选择
+apt-get update
 	echo && echo -e "  你要做什么？
 	
  ${Green_font_prefix}1.${Font_color_suffix} 安装 SSR
  ${Green_font_prefix}2.${Font_color_suffix} 安装 BBR
  ${Green_font_prefix}3.${Font_color_suffix} 安装 fail2ban
  ${Green_font_prefix}4.${Font_color_suffix} 安装 lnmp (网站)
- ${Green_font_prefix}5.${Font_color_suffix} 安装 ASF挂卡(steam)
+ ${Green_font_prefix}5.${Font_color_suffix} 安装 ASF挂卡(steam)（Debian8）
  先使用screen!!!" && echo
 echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
-1. 用putty装||||先在ssr脚本装无改版
+1. 若换内核时长时间卡住请Ctrl+c或者重装系统
 2. 本脚本仅支持 Debian / Ubuntu 系统更换内核，OpenVZ和Docker 不支持更换内核
 3. Debian 更换内核过程中会提示 [ 是否终止卸载内核 ] ，请选择 ${Green_font_prefix} NO ${Font_color_suffix}
 4. 安装BBR并重启服务器后，需要重新运行脚本 启动BBR" && echo
