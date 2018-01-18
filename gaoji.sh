@@ -26,6 +26,7 @@ echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
 	elif [[ ${need} == "2" ]]; then
 <<<<<<< HEAD
 <<<<<<< HEAD
+<<<<<<< HEAD
                 wget https://github.com/nanqinlang-tcp/tcp_nanqinlang/releases/download/3.1/tcp_nanqinlang_3.1.sh
                 bash tcp_nanqinlang_3.1.sh
     elif [[ ${need} == "3" ]]; then
@@ -33,6 +34,10 @@ echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
                 wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/YankeeBBR/master/bbr.sh && bash bbr.sh install
         elif [[ ${need} == "3" ]]; then
 >>>>>>> c4ba6daf1239bfa6c58422f0f2866c1f207d0121
+=======
+		wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/YankeeBBR/master/bbr.sh && bash bbr.sh install       
+	elif [[ ${need} == "3" ]]; then
+>>>>>>> fe7ded40cadf0ff125a657be5bd637503e3c00d8
 =======
 		wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/YankeeBBR/master/bbr.sh && bash bbr.sh install       
 	elif [[ ${need} == "3" ]]; then
