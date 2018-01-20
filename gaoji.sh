@@ -33,16 +33,7 @@ echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
 	elif [[ ${need} == "4" ]]; then
 		wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz && tar zxf lnmp1.4.tar.gz && cd lnmp1.4 && ./install.sh lnmp
 	elif [[ ${need} == "5" ]]; then
-	        wget https://github.com/JustArchi/ArchiSteamFarm/releases/download/3.0.4.3/ASF-linux-x64.zip
-	        apt-get install libunwind8 libunwind8-dev gettext libicu-dev liblttng-ust-dev libcurl4-openssl-dev libssl-dev uuid-dev unzip screen -y
-		unzip ASF-linux-x64.zip -d ASF/
-		cd ASF/ 
-		chmod +x ArchiSteamFarm
-		echo -e "请用ftp工具将配置文件（json+2FA）上传"
-		echo -e "下次登录请输入
-		screen -r asf"
-		echo -e "若出现奇怪的错误请按ctrl+c后输入
-		./ArchiSteamFarm"
+	        wget https://raw.githubusercontent.com/qazxcdswe123/gaoji/master/asf.sh && chmod +x asf.sh && bash asf.sh
 	elif [[ ${need} == "6" ]]; then
 		wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/adbyby.sh && chmod +x adbyby.sh && bash adbyby.sh
 	elif [[ ${need} == "7"  ]]; then
