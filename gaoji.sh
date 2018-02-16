@@ -13,6 +13,7 @@ check_root(){
  ${Green_font_prefix}6.${Font_color_suffix} 安装adbyby（广告过滤） 
  ${Green_font_prefix}7.${Font_color_suffix} 安装宝塔面板 (debian)
  ${Green_font_prefix}8.${Font_color_suffix} 一键安装V2ray
+ ${Green_font_prefix}9.${Font_color_suffix} 安装Gdrive(谷歌网盘)
  
  先使用screen!!!" && echo
 echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
@@ -41,6 +42,9 @@ echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
 		wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh && bash install.sh
 	elif [[ ${need} == "8"  ]]; then
 		bash -c "$(curl -fsSL https://raw.githubusercontent.com/tracyone/v2ray.fun/master/install.sh)"
+	elif [[ ${need} == "9"  ]]; then
+		wget -O /usr/bin/gdrive "//docs.google.com/uc?id=0B3X9GlR6EmbnQ0FtZmJJUXEyRTA&export=download"
+		chmod +x /usr/bin/gdrive
 	else
 		echo -e "${Error} 请输入正确的数字(1-8)" && exit 1
 	fi
