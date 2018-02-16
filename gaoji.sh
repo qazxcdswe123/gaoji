@@ -11,8 +11,9 @@ check_root(){
  ${Green_font_prefix}4.${Font_color_suffix} 安装 lnmp (网站)
  ${Green_font_prefix}5.${Font_color_suffix} 安装 ASF挂卡(steam)
  ${Green_font_prefix}6.${Font_color_suffix} 安装adbyby（广告过滤） 
- ${Green_font_prefix}7.${Font_color_suffix} 安装宝塔面板 
-
+ ${Green_font_prefix}7.${Font_color_suffix} 安装宝塔面板 (debian)
+ ${Green_font_prefix}8.${Font_color_suffix} 一键安装V2ray
+ 
  先使用screen!!!" && echo
 echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
 1. 若换内核时长时间卡住请Ctrl+c或者重装系统
@@ -33,11 +34,13 @@ echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
 	elif [[ ${need} == "4" ]]; then
 		wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz && tar zxf lnmp1.4.tar.gz && cd lnmp1.4 && ./install.sh lnmp
 	elif [[ ${need} == "5" ]]; then
-	        wget https://raw.githubusercontent.com/qazxcdswe123/gaoji/master/asf.sh && chmod +x asf.sh && bash asf.sh
+	    wget https://raw.githubusercontent.com/qazxcdswe123/gaoji/master/asf.sh && chmod +x asf.sh && bash asf.sh
 	elif [[ ${need} == "6" ]]; then
 		wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/adbyby.sh && chmod +x adbyby.sh && bash adbyby.sh
 	elif [[ ${need} == "7"  ]]; then
 		wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh && bash install.sh
+	elif [[ ${need} == "8"  ]]; then
+		bash -c "$(curl -fsSL https://raw.githubusercontent.com/tracyone/v2ray.fun/master/install.sh)"
 	else
-		echo -e "${Error} 请输入正确的数字(1-7)" && exit 1
+		echo -e "${Error} 请输入正确的数字(1-8)" && exit 1
 	fi
