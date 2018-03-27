@@ -28,8 +28,8 @@ echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
 	if [[ ${need} == "1" ]]; then
          wget -N --no-check-certificate https://softs.fun/Bash/ssr.sh && chmod +x ssr.sh && bash ssr.sh
 	elif [[ ${need} == "2" ]]; then
-         wget https://github.com/nanqinlang-tcp/tcp_nanqinlang/releases/download/3.1/tcp_nanqinlang_3.1.sh
-         bash tcp_nanqinlang_3.1.sh
+         wget https://github.com/nanqinlang-tcp/tcp_nanqinlang/releases/download/3.4.2/tcp_nanqinlang-pro-3.4.2.sh
+         bash tcp_nanqinlang-pro-3.4.2.sh
     elif [[ ${need} == "3" ]]; then
 		wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/fail2ban.sh && bash fail2ban.sh 2>&1 | tee fail2ban.log
 	elif [[ ${need} == "4" ]]; then
@@ -41,7 +41,7 @@ echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
 	elif [[ ${need} == "7"  ]]; then
 		wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh && bash install.sh
 	elif [[ ${need} == "8"  ]]; then
-		bash -c "$(curl -fsSL https://raw.githubusercontent.com/tracyone/v2ray.fun/master/install.sh)"
+		bash <(curl -s -L https://233blog.com/v2ray.sh)
 	elif [[ ${need} == "9"  ]]; then
 		wget -O /usr/bin/gdrive "https://docs.google.com/uc?id=0B3X9GlR6EmbnQ0FtZmJJUXEyRTA&export=download"
 		chmod +x /usr/bin/gdrive
