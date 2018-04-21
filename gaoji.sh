@@ -2,7 +2,6 @@
 check_root(){
 	[[ "`id -u`" != "0" ]] && echo -e "${Error} 请用root账号登录!" && exit 1
 }
-wget https://github.com/nanqinlang-tcp/tcp_nanqinlang/releases/download/3.4.2/tcp_nanqinlang-pro-3.4.2.sh
 	echo && echo -e "  你要做什么？
 	
  ${Green_font_prefix}1.${Font_color_suffix} 安装 SSR（选项14可装原本bbr）
