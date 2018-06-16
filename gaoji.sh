@@ -27,8 +27,8 @@ echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
 	if [[ ${need} == "1" ]]; then
          wget -N --no-check-certificate https://softs.fun/Bash/ssr.sh && chmod +x ssr.sh && bash ssr.sh
 	elif [[ ${need} == "2" ]]; then
-         bash tcp_nanqinlang-pro-3.4.2.sh
-    elif [[ ${need} == "3" ]]; then
+         bash tcp_nanqinlang-pro-3.4.5.1-nocheckvirt.sh
+        elif [[ ${need} == "3" ]]; then
 		wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/fail2ban.sh && bash fail2ban.sh 2>&1 | tee fail2ban.log
 	elif [[ ${need} == "4" ]]; then
 		wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz && tar zxf lnmp1.4.tar.gz && cd lnmp1.4 && ./install.sh lnmp
