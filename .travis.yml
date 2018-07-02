@@ -1,4 +1,0 @@
-language: shell
-script: gaoji.sh
-sudo: required
-before_install:sudo bash start.sh
