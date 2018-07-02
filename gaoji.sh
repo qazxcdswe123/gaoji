@@ -7,8 +7,8 @@ check_root() {
 }
 echo && echo -e "  你要做什么？
 	
- ${Green_font_prefix}1.${Font_color_suffix} 安装 SSR（选项14可装原本bbr）
- ${Green_font_prefix}2.${Font_color_suffix} 安装 BBR(魔改)(易报错不推荐)
+ ${Green_font_prefix}1.${Font_color_suffix} 安装 SSR
+ ${Green_font_prefix}2.${Font_color_suffix} 安装 BBR(魔改)
  ${Green_font_prefix}3.${Font_color_suffix} 安装 fail2ban（修改ssh）
  ${Green_font_prefix}4.${Font_color_suffix} 安装 lnmp (网站)
  ${Green_font_prefix}5.${Font_color_suffix} 安装 ASF挂卡(steam)
