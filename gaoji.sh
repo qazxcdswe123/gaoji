@@ -1,19 +1,11 @@
 #!/bin/bash
 
+Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
+
 check_root() {
-	[[ "$(id -u)" != "0" ]] && echo -e "${Error} 请用root账号登录!" && exit 1}
+	[[ "$(id -u)" != "0" ]] && echo -e "${Error} 请用root账号登录!" && exit 1
+}
 echo && echo -e "  你要做什么？
-
-# fonts color
-Green="\\033[32m"
-Red="\\033[31m"
-GreenBG="\\033[42;37m"
-RedBG="\\033[41;37m"
-Font="\\033[0m"
-Green_font_prefix="\\033[32m"
-Green_background_prefix="\\033[42;37m"
-Font_color_suffix="\\033[0m"
-
 	
  ${Green_font_prefix}1.${Font_color_suffix} 安装 SSR
  ${Green_font_prefix}2.${Font_color_suffix} 安装 BBR(魔改)
@@ -23,9 +15,9 @@ Font_color_suffix="\\033[0m"
  ${Green_font_prefix}6.${Font_color_suffix} 安装adbyby（广告过滤） 
  ${Green_font_prefix}7.${Font_color_suffix} 安装宝塔面板 (debian)
  ${Green_font_prefix}8.${Font_color_suffix} 一键安装V2ray
- ${Green_font_prefix}9.${Font_color_suffix} 安装Gdrive(谷歌网盘)(用法自行探索)
+ ${Green_font_prefix}9.${Font_color_suffix} 安装Gdrive(谷歌网盘)
  
- 先使用screen!!!" && 
+ 先使用screen!!!" && echo
 echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
 1. 若换内核时长时间卡住请Ctrl+c或者重装系统
 2. 本脚本仅支持 Debian / Ubuntu 系统更换内核，OpenVZ和Docker 不支持更换内核
