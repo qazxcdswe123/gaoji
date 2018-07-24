@@ -26,9 +26,9 @@ Font_color_suffix="\\033[0m"
  ${Green_font_prefix}6.${Font_color_suffix} 安装adbyby（广告过滤） 
  ${Green_font_prefix}7.${Font_color_suffix} 安装宝塔面板 (debian)
  ${Green_font_prefix}8.${Font_color_suffix} 一键安装V2ray
- ${Green_font_prefix}9.${Font_color_suffix} 安装Gdrive(谷歌网盘)
+ ${Green_font_prefix}9.${Font_color_suffix} 安装Gdrive(谷歌网盘)(用法自行探索)
  
- 先使用screen!!!" && echo
+ 先使用screen!!!" && 
 echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
 1. 若换内核时长时间卡住请Ctrl+c或者重装系统
 2. 本脚本仅支持 Debian / Ubuntu 系统更换内核，OpenVZ和Docker 不支持更换内核
