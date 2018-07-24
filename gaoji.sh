@@ -6,6 +6,17 @@ check_root() {
 	[[ "$(id -u)" != "0" ]] && echo -e "${Error} 请用root账号登录!" && exit 1
 }
 echo && echo -e "  你要做什么？
+
+# fonts color
+Green="\\033[32m"
+Red="\\033[31m"
+GreenBG="\\033[42;37m"
+RedBG="\\033[41;37m"
+Font="\\033[0m"
+Green_font_prefix="\\033[32m"
+Green_background_prefix="\\033[42;37m"
+Font_color_suffix="\\033[0m"
+
 	
  ${Green_font_prefix}1.${Font_color_suffix} 安装 SSR
  ${Green_font_prefix}2.${Font_color_suffix} 安装 BBR(魔改)
