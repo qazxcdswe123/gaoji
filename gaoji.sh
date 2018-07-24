@@ -1,10 +1,7 @@
 #!/bin/bash
 
-Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
-
 check_root() {
-	[[ "$(id -u)" != "0" ]] && echo -e "${Error} 请用root账号登录!" && exit 1
-}
+	[[ "$(id -u)" != "0" ]] && echo -e "${Error} 请用root账号登录!" && exit 1}
 echo && echo -e "  你要做什么？
 
 # fonts color
