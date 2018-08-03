@@ -36,7 +36,7 @@ elif [[ ${need} == "3" ]]; then
 elif [[ ${need} == "4" ]]; then
 	wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz && tar zxf lnmp1.4.tar.gz && cd lnmp1.4 && ./install.sh lnmp
 elif [[ ${need} == "5" ]]; then
-	wget https://raw.githubusercontent.com/qazxcdswe123/gaoji/master/asf.sh && chmod +x asf.sh && bash asf.sh
+	wget http://raw.githubusercontent.com/qazxcdswe123/gaoji/master/asf.sh && chmod +x asf.sh && bash asf.sh
 elif [[ ${need} == "6" ]]; then
 	wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/adbyby.sh && chmod +x adbyby.sh && bash adbyby.sh
 elif [[ ${need} == "7" ]]; then
