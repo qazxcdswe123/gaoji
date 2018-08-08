@@ -7,15 +7,17 @@ check_root() {
 }
 echo && echo -e "  你要做什么？
 	
- ${Green_font_prefix}1.${Font_color_suffix} 安装 SSR
+ ${Green_font_prefix}1.${Font_color_suffix} 安装 SS(R)
  ${Green_font_prefix}2.${Font_color_suffix} 安装 BBR(魔改)
  ${Green_font_prefix}3.${Font_color_suffix} 安装 fail2ban（修改ssh）
  ${Green_font_prefix}4.${Font_color_suffix} 安装 lnmp (网站)
  ${Green_font_prefix}5.${Font_color_suffix} 安装 ASF挂卡(steam)
  ${Green_font_prefix}6.${Font_color_suffix} 安装adbyby（广告过滤） 
  ${Green_font_prefix}7.${Font_color_suffix} 安装宝塔面板 (debian)
- ${Green_font_prefix}8.${Font_color_suffix} 一键安装V2ray
- ${Green_font_prefix}9.${Font_color_suffix} 安装Gdrive(谷歌网盘)
+ ${Green_font_prefix}8.${Font_color_suffix} 安装V2ray
+ ${Green_font_prefix}9.${Font_color_suffix} 安装rclone
+ ${Green_font_prefix}10.${Font_color_suffix} 安装oneindex
+
 && echo
 echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
 1. 若换内核时长时间卡住请Ctrl+c或者重装系统
@@ -27,7 +29,9 @@ echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
 stty erase '^H' && read -p "(默认: 取消):" need
 [[ -z "${need}" ]] && echo "已取消..." && exit 1
 if [[ ${need} == "1" ]]; then
-	wget -N --no-check-certificate https://softs.fun/Bash/ssr.sh && chmod +x ssr.sh && bash ssr.sh
+	wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh
+	chmod +x shadowsocks-all.sh
+	./shadowsocks-all.sh 2>&1 | tee shadowsocks-all.log
 elif [[ ${need} == "2" ]]; then
 	bash tcp_nanqinlang-pro-3.4.5.1-nocheckvirt.sh
 elif [[ ${need} == "3" ]]; then
@@ -43,8 +47,9 @@ elif [[ ${need} == "7" ]]; then
 elif [[ ${need} == "8" ]]; then
 	bash <(curl -s -L https://233blog.com/v2ray.sh)
 elif [[ ${need} == "9" ]]; then
-	wget -O /usr/bin/gdrive "https://docs.google.com/uc?id=0B3X9GlR6EmbnQ0FtZmJJUXEyRTA&export=download"
-	chmod +x /usr/bin/gdrive
+	curl https://rclone.org/install.sh | sudo bash
+elif [[ ${need} == "10"]]; then
+	wget https://www.moerats.com/usr/shell/OneIndex.sh && bash OneIndex.sh
 else
-	echo -e "${Error} 请输入正确的数字(1-8)" && exit 1
+	echo -e "${Error} 请输入正确的数字(1-10)" && exit 1
 fi
