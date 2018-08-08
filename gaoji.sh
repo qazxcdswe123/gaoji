@@ -39,13 +39,13 @@ elif [[ ${need} == "3" ]]; then
 elif [[ ${need} == "4" ]]; then
 	wget -c http://soft.vpser.net/lnmp/lnmp1.4.tar.gz && tar zxf lnmp1.4.tar.gz && cd lnmp1.4 && ./install.sh lnmp
 elif [[ ${need} == "5" ]]; then
-	wget https://raw.githubusercontent.com/qazxcdswe123/gaoji/master/asf.sh && chmod +x asf.sh && bash asf.sh
+	wget http://raw.githubusercontent.com/qazxcdswe123/gaoji/master/asf.sh && chmod +x asf.sh && bash asf.sh
 elif [[ ${need} == "6" ]]; then
 	wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/adbyby.sh && chmod +x adbyby.sh && bash adbyby.sh
 elif [[ ${need} == "7" ]]; then
 	wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh && bash install.sh
 elif [[ ${need} == "8" ]]; then
-	bash <(curl -s -L https://233blog.com/v2ray.sh)
+	source <(curl -sL https://git.io/fNgqx)
 elif [[ ${need} == "9" ]]; then
 	curl https://rclone.org/install.sh | sudo bash
 elif [[ ${need} == "10"]]; then
