@@ -48,7 +48,7 @@ elif [[ ${need} == "8" ]]; then
 	source <(curl -sL https://git.io/fNgqx)
 elif [[ ${need} == "9" ]]; then
 	curl https://rclone.org/install.sh | sudo bash
-elif [[ ${need} == "10"]]; then
+elif [[ ${need} == "10" ]]; then
 	wget https://www.moerats.com/usr/shell/OneIndex.sh && bash OneIndex.sh
 else
 	echo -e "${Error} 请输入正确的数字(1-10)" && exit 1
