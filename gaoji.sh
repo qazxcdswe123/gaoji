@@ -17,9 +17,9 @@ echo && echo -e "  你要做什么？
  ${Green_font_prefix}8.${Font_color_suffix} 安装V2ray
  ${Green_font_prefix}9.${Font_color_suffix} 安装rclone
  ${Green_font_prefix}10.${Font_color_suffix} 安装oneindex
-"
-&& echo
-echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
+
+ 先使用${Green_font_prefix} screen ${Font_color_suffix}!!!" && echo
+ echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
 1. 若换内核时长时间卡住请Ctrl+c或者重装系统
 2. 本脚本仅支持 Debian / Ubuntu 系统更换内核，OpenVZ和Docker 不支持更换内核
 3. Debian 更换内核过程中会提示 [ 是否终止卸载内核 ] ，请选择 ${Green_font_prefix} NO ${Font_color_suffix}
