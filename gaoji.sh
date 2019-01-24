@@ -17,6 +17,8 @@ echo && echo -e "  你要做什么？
  ${Green_font_prefix}8.${Font_color_suffix} 安装V2ray
  ${Green_font_prefix}9.${Font_color_suffix} 安装rclone
  ${Green_font_prefix}10.${Font_color_suffix} 安装oneindex
+ ${Green_font_prefix}11.${Font_color_suffix} 安装MTProxy (Telegram)
+ ${Green_font_prefix}12.${Font_color_suffix} 一键封禁 垃圾邮件(SMAP)/BT/PT
 
  先使用${Green_font_prefix} screen ${Font_color_suffix}!!!" && echo
  echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
@@ -24,7 +26,7 @@ echo && echo -e "  你要做什么？
 2. 本脚本仅支持 Debian / Ubuntu 系统更换内核，OpenVZ和Docker 不支持更换内核
 3. Debian 更换内核过程中会提示 [ 是否终止卸载内核 ] ，请选择 ${Green_font_prefix} NO ${Font_color_suffix}
 4. 安装BBR并重启服务器后，需要重新运行脚本 启动BBR
-5. 全部只在${Green_font_prefix} Debian8 ${Font_color_suffix}上测试过
+5. 全部只在${Green_font_prefix} Debian ${Font_color_suffix}上测试过
 6. 不支持centos" && echo
 stty erase '^H' && read -p "(默认: 取消):" need
 [[ -z "${need}" ]] && echo "已取消..." && exit 1
@@ -37,7 +39,7 @@ elif [[ ${need} == "2" ]]; then
 elif [[ ${need} == "3" ]]; then
 	wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/fail2ban.sh && bash fail2ban.sh 2>&1 | tee fail2ban.log
 elif [[ ${need} == "4" ]]; then
-	wget -c http://soft.vpser.net/lnmp/lnmp1.5.tar.gz && tar zxf lnmp1.5.tar.gz && cd lnmp1.5 && ./install.sh lnmp
+	wget http://soft.vpser.net/lnmp/lnmp1.6beta.tar.gz -cO lnmp1.6beta.tar.gz && tar zxf lnmp1.6beta.tar.gz && cd lnmp1.6 && ./install.sh lnmp
 elif [[ ${need} == "5" ]]; then
 	wget http://raw.githubusercontent.com/qazxcdswe123/gaoji/master/asf.sh && chmod +x asf.sh && bash asf.sh
 elif [[ ${need} == "6" ]]; then
@@ -50,6 +52,10 @@ elif [[ ${need} == "9" ]]; then
 	curl https://rclone.org/install.sh | sudo bash
 elif [[ ${need} == "10" ]]; then
 	wget https://www.moerats.com/usr/shell/OneIndex.sh && bash OneIndex.sh
+elif [[ ${need} == "11" ]]; then
+	wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/mtproxy_go.sh && chmod +x mtproxy_go.sh && bash mtproxy_go.sh
+elif [[ ${need} == "12" ]]; then
+	wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ban_iptables.sh && chmod +x ban_iptables.sh && bash ban_iptables.sh
 else
-	echo -e "${Error} 请输入正确的数字(1-10)" && exit 1
+	echo -e "${Error} 请输入正确的数字(1-12)" && exit 1
 fi
