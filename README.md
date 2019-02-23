@@ -22,7 +22,7 @@
 ---
 ### 安装:
 ``` bash
-wget -N --no-check-certificate https://raw.githubusercontent.com/qazxcdswe123/gaoji/master/start.sh && chmod +x start.sh && bash start.sh
+wget -N --no-check-certificate https://git.io/fhbeF && chmod +x fhbeF && ./fhbeF
 ```
 
 ---
