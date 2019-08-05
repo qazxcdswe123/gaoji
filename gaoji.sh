@@ -31,15 +31,13 @@ echo && echo -e "  你要做什么？
 stty erase '^H' && read -p "(默认: 取消):" need
 [[ -z "${need}" ]] && echo "已取消..." && exit 1
 if [[ ${need} == "1" ]]; then
-	wget --no-check-certificate -O shadowsocks-all.sh https://raw.githubusercontent.com/teddysun/shadowsocks_install/master/shadowsocks-all.sh
-	chmod +x shadowsocks-all.sh
-	./shadowsocks-all.sh 2>&1 | tee shadowsocks-all.log
+	bash <(curl -s -L https://git.io/ss.sh)
 elif [[ ${need} == "2" ]]; then
-	bash tcp_nanqinlang-pro-3.4.5.1-nocheckvirt.sh
+	bash tcp.sh
 elif [[ ${need} == "3" ]]; then
 	wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/fail2ban.sh && bash fail2ban.sh 2>&1 | tee fail2ban.log
 elif [[ ${need} == "4" ]]; then
-	wget http://soft.vpser.net/lnmp/lnmp1.6beta.tar.gz -cO lnmp1.6beta.tar.gz && tar zxf lnmp1.6beta.tar.gz && cd lnmp1.6 && ./install.sh lnmp
+	wget http://soft.vpser.net/lnmp/lnmp1.6.tar.gz -cO lnmp1.6.tar.gz && tar zxf lnmp1.6.tar.gz && cd lnmp1.6 && ./install.sh lnmp
 elif [[ ${need} == "5" ]]; then
 	wget http://raw.githubusercontent.com/qazxcdswe123/gaoji/master/asf.sh && chmod +x asf.sh && bash asf.sh
 elif [[ ${need} == "6" ]]; then
@@ -47,7 +45,7 @@ elif [[ ${need} == "6" ]]; then
 elif [[ ${need} == "7" ]]; then
 	wget -O install.sh http://download.bt.cn/install/install-ubuntu.sh && bash install.sh
 elif [[ ${need} == "8" ]]; then
-	source <(curl -sL https://git.io/fNgqx)
+	bash <(curl -s -L https://git.io/v2ray.sh)
 elif [[ ${need} == "9" ]]; then
 	curl https://rclone.org/install.sh | sudo bash
 elif [[ ${need} == "10" ]]; then
