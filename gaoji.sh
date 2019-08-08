@@ -3,7 +3,7 @@
 Green_font_prefix="\033[32m" && Red_font_prefix="\033[31m" && Green_background_prefix="\033[42;37m" && Red_background_prefix="\033[41;37m" && Font_color_suffix="\033[0m"
 
 check_root() {
-	[[ "$(id -u)" != "0" ]] && echo -e "${Error} 请用root账号登录!" && exit 1
+	[[ "$(id -u)" != "0" ]] && echo -e "请用root账号登录!" && exit 1
 }
 echo && echo -e "  你要做什么？
 	
@@ -55,5 +55,5 @@ elif [[ ${need} == "11" ]]; then
 elif [[ ${need} == "12" ]]; then
 	wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ban_iptables.sh && chmod +x ban_iptables.sh && bash ban_iptables.sh
 else
-	echo -e "${Error} 请输入正确的数字(1-12)" && exit 1
+	echo -e "请输入正确的数字(1-12)" && exit 1
 fi
