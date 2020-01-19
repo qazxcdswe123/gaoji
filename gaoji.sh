@@ -16,7 +16,7 @@ echo && echo -e "  你要做什么？
  ${Green_font_prefix}7.${Font_color_suffix} 安装宝塔面板 (debian)
  ${Green_font_prefix}8.${Font_color_suffix} 安装V2ray
  ${Green_font_prefix}9.${Font_color_suffix} 安装rclone
- ${Green_font_prefix}10.${Font_color_suffix} 安装oneindex
+ ${Green_font_prefix}10.${Font_color_suffix} 安装aria2
  ${Green_font_prefix}11.${Font_color_suffix} 安装Syncthing Relay服务端贡献流量
  ${Green_font_prefix}12.${Font_color_suffix} 一键封禁 垃圾邮件(SMAP)/BT/PT
 
@@ -49,7 +49,7 @@ elif [[ ${need} == "8" ]]; then
 elif [[ ${need} == "9" ]]; then
 	curl https://rclone.org/install.sh | sudo bash
 elif [[ ${need} == "10" ]]; then
-	wget https://www.moerats.com/usr/shell/OneIndex.sh && bash OneIndex.sh
+	wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/aria2.sh && chmod +x aria2.sh && bash aria2.sh
 elif [[ ${need} == "11" ]]; then
 	wget -N --no-check-certificate https://raw.githubusercontent.com/qazxcdswe123/gaoji/master/relay.sh && chmod +x relay.sh && bash relay.sh
 elif [[ ${need} == "12" ]]; then

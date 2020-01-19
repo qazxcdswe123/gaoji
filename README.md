@@ -15,8 +15,8 @@
 - 安装宝塔面板 (debian)
 - 安装V2ray (multi-v2ray)
 - 安装rclone
-- 安装oneindex
-- 安装MTProxy-Go
+- 安装aria2
+- 安装Syncthing Relay Server刷流量
 - 一键封禁 垃圾邮件(SMAP)/BT/PT
 
 ---
