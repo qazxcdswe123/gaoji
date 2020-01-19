@@ -17,7 +17,7 @@ echo && echo -e "  你要做什么？
  ${Green_font_prefix}8.${Font_color_suffix} 安装V2ray
  ${Green_font_prefix}9.${Font_color_suffix} 安装rclone
  ${Green_font_prefix}10.${Font_color_suffix} 安装oneindex
- ${Green_font_prefix}11.${Font_color_suffix} 安装MTProxy (Telegram)
+ ${Green_font_prefix}11.${Font_color_suffix} 安装Syncthing Relay服务端贡献流量
  ${Green_font_prefix}12.${Font_color_suffix} 一键封禁 垃圾邮件(SMAP)/BT/PT
 
  先使用${Green_font_prefix} screen ${Font_color_suffix}!!!" && echo
@@ -37,7 +37,7 @@ elif [[ ${need} == "2" ]]; then
 elif [[ ${need} == "3" ]]; then
 	wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/fail2ban.sh && bash fail2ban.sh 2>&1 | tee fail2ban.log
 elif [[ ${need} == "4" ]]; then
-	wget http://soft.vpser.net/lnmp/lnmp1.6.tar.gz -cO lnmp1.6.tar.gz && tar zxf lnmp1.6.tar.gz && cd lnmp1.6 && ./install.sh lnmp
+	wget http://soft.vpser.net/lnmp/lnmp1.7beta.tar.gz -cO lnmp1.7beta.tar.gz && tar zxf lnmp1.7beta.tar.gz && cd lnmp1.7 && ./install.sh lnmp
 elif [[ ${need} == "5" ]]; then
 	wget http://raw.githubusercontent.com/qazxcdswe123/gaoji/master/asf.sh && chmod +x asf.sh && bash asf.sh
 elif [[ ${need} == "6" ]]; then
@@ -51,7 +51,7 @@ elif [[ ${need} == "9" ]]; then
 elif [[ ${need} == "10" ]]; then
 	wget https://www.moerats.com/usr/shell/OneIndex.sh && bash OneIndex.sh
 elif [[ ${need} == "11" ]]; then
-	wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/mtproxy_go.sh && chmod +x mtproxy_go.sh && bash mtproxy_go.sh
+	wget -N --no-check-certificate https://raw.githubusercontent.com/qazxcdswe123/gaoji/master/relay.sh && chmod +x relay.sh && bash relay.sh
 elif [[ ${need} == "12" ]]; then
 	wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ban_iptables.sh && chmod +x ban_iptables.sh && bash ban_iptables.sh
 else
