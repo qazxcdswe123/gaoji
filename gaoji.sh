@@ -19,7 +19,10 @@ echo && echo -e "  你要做什么？
  ${Green_font_prefix}10.${Font_color_suffix} 安装aria2
  ${Green_font_prefix}11.${Font_color_suffix} 安装Syncthing Relay服务端贡献流量
  ${Green_font_prefix}12.${Font_color_suffix} 一键封禁 垃圾邮件(SMAP)/BT/PT
- ${Green_font_prefix}12.${Font_color_suffix} 下载Speedtest-cli测速
+ ${Green_font_prefix}13.${Font_color_suffix} 下载Speedtest-cli测速
+ ${Green_font_prefix}14.${Font_color_suffix} 下载gost并按预设参数运行
+ ${Green_font_prefix}15.${Font_color_suffix} 仅下载gost
+
 先使用${Green_font_prefix} screen ${Font_color_suffix}!!!" && echo
 echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
 1. 若换内核时长时间卡住请Ctrl+c或者重装系统
@@ -56,6 +59,10 @@ elif [[ ${need} == "12" ]]; then
 	wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ban_iptables.sh && chmod +x ban_iptables.sh && bash ban_iptables.sh
 elif [[ ${need} == "13" ]]; then
 	wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py && chmod +x speedtest-cli && ./speedtest-cli
+elif [[ ${need} == "14" ]]; then
+	wget -N --no-check-certificate https://raw.githubusercontent.com/qazxcdswe123/gaoji/master/gost-s.sh && chmod +x gost-s.sh && bash gost-s.sh
+elif [[ ${need} == "15" ]]; then
+	wget -N --no-check-certificate https://raw.githubusercontent.com/qazxcdswe123/gaoji/master/gost-c.sh && chmod +x gost-c.sh && bash gost-c.sh
 else
-	echo -e "请输入正确的数字(1-12)" && exit 1
+	echo -e "请输入正确的数字(1-15)" && exit 1
 fi
