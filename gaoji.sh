@@ -10,7 +10,7 @@ echo && echo -e "  你要做什么？
  ${Green_font_prefix}1.${Font_color_suffix} 安装 SS(R)
  ${Green_font_prefix}2.${Font_color_suffix} 安装 BBR(魔改)
  ${Green_font_prefix}3.${Font_color_suffix} 安装 fail2ban（修改ssh）
- ${Green_font_prefix}4.${Font_color_suffix} 安装 lnmp (网站)
+ ${Green_font_prefix}4.${Font_color_suffix} 安装 LNMP (网站)
  ${Green_font_prefix}5.${Font_color_suffix} 安装 ASF挂卡(steam)
  ${Green_font_prefix}6.${Font_color_suffix} 安装adbyby（广告过滤） 
  ${Green_font_prefix}7.${Font_color_suffix} 安装宝塔面板 (debian)
@@ -19,9 +19,9 @@ echo && echo -e "  你要做什么？
  ${Green_font_prefix}10.${Font_color_suffix} 安装aria2
  ${Green_font_prefix}11.${Font_color_suffix} 安装Syncthing Relay服务端贡献流量
  ${Green_font_prefix}12.${Font_color_suffix} 一键封禁 垃圾邮件(SMAP)/BT/PT
-
- 先使用${Green_font_prefix} screen ${Font_color_suffix}!!!" && echo
- echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
+ ${Green_font_prefix}12.${Font_color_suffix} 下载Speedtest-cli测速
+先使用${Green_font_prefix} screen ${Font_color_suffix}!!!" && echo
+echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
 1. 若换内核时长时间卡住请Ctrl+c或者重装系统
 2. 本脚本仅支持 Debian / Ubuntu 系统更换内核，OpenVZ和Docker 不支持更换内核
 3. Debian 更换内核过程中会提示 [ 是否终止卸载内核 ] ，请选择 ${Green_font_prefix} NO ${Font_color_suffix}
@@ -54,6 +54,8 @@ elif [[ ${need} == "11" ]]; then
 	wget -N --no-check-certificate https://raw.githubusercontent.com/qazxcdswe123/gaoji/master/relay.sh && chmod +x relay.sh && bash relay.sh
 elif [[ ${need} == "12" ]]; then
 	wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ban_iptables.sh && chmod +x ban_iptables.sh && bash ban_iptables.sh
+elif [[ ${need} == "13" ]]; then
+	wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py && chmod +x speedtest-cli && ./speedtest-cli
 else
 	echo -e "请输入正确的数字(1-12)" && exit 1
 fi
