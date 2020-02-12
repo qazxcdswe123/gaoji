@@ -3,8 +3,7 @@ Font_color_suffix="\033[0m"
 Green_font_prefix="\033[32m"
 rm -rf /root/gost
 
-VER="$(wget -qO- https://github.com/ginuerzh/gost/tags | grep -oE "/tag/v[^"]*" | head -n1 | cut -dv -f2)"
-VER=${VER:=2.9.1}
+VER=$( wget -qO- https://github.com/ginuerzh/gost/tags | grep -oE -m1 "/tag/v[^\"]*" | cut -dv -f2 )
 URL="https://github.com/ginuerzh/gost/releases/download/v${VER}/gost-linux-amd64-${VER}.gz"
 
 echo "1. Downloading gost-linux-amd64-${VER}.gz to /root/gost from $URL" && echo
