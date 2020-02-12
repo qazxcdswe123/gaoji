@@ -3,7 +3,7 @@ Font_color_suffix="\033[0m"
 Green_font_prefix="\033[32m"
 rm -rf /root/gost
 
-METHOD="-L=mws://:80 -L=tun://AEAD_CHACHA20_POLY1305:password@:8443?net=192.168.123.1/24&tcp=true"
+METHOD="-L=mws://:80 -L=tun://AEAD_CHACHA20_POLY1305:123456@:8443?net=192.168.123.1/24&tcp=true"
 METHOD=${METHOD}
 VER=$( wget -qO- https://github.com/ginuerzh/gost/tags | grep -oE -m1 "/tag/v[^\"]*" | cut -dv -f2 )
 URL="https://github.com/ginuerzh/gost/releases/download/v${VER}/gost-linux-amd64-${VER}.gz"
