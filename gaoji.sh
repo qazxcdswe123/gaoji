@@ -60,9 +60,9 @@ elif [[ ${need} == "12" ]]; then
 elif [[ ${need} == "13" ]]; then
 	wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py && chmod +x speedtest-cli && ./speedtest-cli
 elif [[ ${need} == "14" ]]; then
-	wget -N --no-check-certificate https://raw.githubusercontent.com/qazxcdswe123/gaoji/master/gost-s.sh && chmod +x gost-s.sh && bash gost-s.sh
+	curl https://raw.githubusercontent.com/qazxcdswe123/gaoji/master/gost-s.sh | bash
 elif [[ ${need} == "15" ]]; then
-	wget -N --no-check-certificate https://raw.githubusercontent.com/qazxcdswe123/gaoji/master/gost-c.sh && chmod +x gost-c.sh && bash gost-c.sh
+	curl https://raw.githubusercontent.com/qazxcdswe123/gaoji/master/gost-c.sh | bash
 else
 	echo -e "请输入正确的数字(1-15)" && exit 1
 fi
