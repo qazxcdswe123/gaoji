@@ -6,18 +6,20 @@
 
 ## 功能
 
-- 安装SS(R)
-- 安装 BBR(魔改)
-- 安装 fail2ban（修改ssh）
-- 安装 lnmp (网站)
-- 安装 ASF挂卡(steam)
-- 安装adbyby（广告过滤） 
-- 安装宝塔面板 (debian)
-- 安装V2ray (multi-v2ray)
-- 安装rclone
-- 安装aria2
-- 安装Syncthing Relay Server刷流量
+- 一键安装SS(R)
+- 一键安装 BBR(魔改)
+- 一键安装 fail2ban（修改ssh）
+- 一键安装 lnmp (网站)
+- 一键安装 ASF挂卡(steam)
+- 一键安装adbyby（广告过滤） 
+- 一键安装宝塔面板 (debian)
+- 一键安装V2ray (multi-v2ray)
+- 一键安装rclone
+- 一键安装aria2
+- 一键安装Syncthing Relay Server刷流量
 - 一键封禁 垃圾邮件(SMAP)/BT/PT
+- 下载Speedtest-cli测速
+- 一键安装gost
 
 ---
 ### 安装:
