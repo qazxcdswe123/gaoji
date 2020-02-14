@@ -31,7 +31,7 @@ wget -N --no-check-certificate https://git.io/fhbeF && chmod +x fhbeF && ./fhbeF
 
 ### 安装后的使用
 ``` bash
-bash gaoji.sh
+gaoji
 ```
 
 ---
