@@ -23,16 +23,16 @@ check_sys(){
 	bit=`uname -m`
 }
 System_structure(){
-    if [[ $(bit) == "x86_64"]]; then
+    if [[ $(bit) == "x86_64" ]]; then
         target="x64"
-    elif [[$(bit) == "arm-rbpi"]]; then
+    elif [[$(bit) == "arm-rbpi" ]]; then
         target="arm"
     else
         echo -e "ASF不支持除x64和arm架构以外的系统，请重装系统吧"
     exit
 }
 Install_Dependence(){
-    if [[ $(release) == "centos"]]; then
+    if [[ $(release) == "centos" ]]; then
         yum update && yum remove libssl1.0.0 && yum install $Dependence -y
     else
         apt-get update && apt-get purge libssl1.0.0 && apt-get install $Dependence -y
