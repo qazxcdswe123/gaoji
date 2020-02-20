@@ -29,13 +29,15 @@ System_structure(){
         target="arm"
     else
         echo -e "ASF不支持除x64和arm架构以外的系统，请重装系统吧"
-    exit
+    exit 1
+    fi
 }
 Install_Dependence(){
     if [[ $(release) == "centos" ]]; then
         yum update && yum remove libssl1.0.0 && yum install $Dependence -y
     else
         apt-get update && apt-get purge libssl1.0.0 && apt-get install $Dependence -y
+    fi
 }
 Get_ASF(){
     VER=$( wget -qO- https://github.com/JustArchiNET/ArchiSteamFarm/tags | grep -oE -m1 "/tag/v[^\"]*" | cut -dv -f2 )
