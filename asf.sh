@@ -4,6 +4,7 @@ export PATH
 
 Dependence="libunwind8 libunwind8-dev gettext libicu-dev liblttng-ust-dev libcurl4-openssl-dev libssl-dev uuid-dev unzip screen libkrb5-3"
 bit=`uname -m`
+VER=$( wget -qO- https://github.com/JustArchiNET/ArchiSteamFarm/tags | grep -oE -m1 "/tag/v[^\"]*" | cut -dv -f2 )
 
 if [[ -f /etc/redhat-release ]]; then
 	release="centos"
