@@ -22,9 +22,9 @@ elif cat /proc/version | grep -q -E -i "centos|red hat|redhat"; then
 fi
 
 if [[ $(bit) == "x86_64" ]]; then
-        target="x64"
-elif [[$(bit) == "arm-rbpi" ]]; then
-    target="arm"
+    bit="x64"
+elif [[ $(bit) == "arm-rbpi" ]]; then
+    bit="arm"
 else
     echo -e "ASF不支持除x64和arm架构以外的系统，请重装系统吧"
 	exit 1
@@ -37,7 +37,7 @@ else
 fi
 
 VER=$( wget -qO- https://github.com/JustArchiNET/ArchiSteamFarm/tags | grep -oE -m1 "/tag/v[^\"]*" | cut -dv -f2 )
-wget https://github.com/JustArchi/ArchiSteamFarm/releases/download/$VER/ASF-linux-$target.zip
+wget https://github.com/JustArchi/ArchiSteamFarm/releases/download/$VER/ASF-linux-$bit.zip
 unzip ASF-linux-x64.zip -d ASF/
 cd ASF/ 
 chmod +x ArchiSteamFarm

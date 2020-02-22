@@ -7,18 +7,18 @@ METHOD="-L=mws://:80 -L=socks5+h2://:443"
 METHOD=${METHOD}
 bit="uname -m"
 
-if [[ $(bit) == "x86_64" ]]; then
-    target="adm64"
-elif [[$(bit) == "arm-rbpi" ]]; then
-    target="armv7"
+if [[ ${bit} == "x86_64" ]]; then
+    bit="adm64"
+elif [[${bit} == "arm-rbpi" ]]; then
+    bit="armv7"
 else
-    target="386"
+    bit="386"
 fi
 
 VER=$( wget -qO- https://github.com/ginuerzh/gost/tags | grep -oE -m1 "/tag/v[^\"]*" | cut -dv -f2 )
-URL="https://github.com/ginuerzh/gost/releases/download/v${VER}/gost-linux-${target}-${VER}.gz"
+URL="https://github.com/ginuerzh/gost/releases/download/v${VER}/gost-linux-${bit}-${VER}.gz"
 
-echo "1. Downloading gost-linux-${target}-${VER}.gz to /root/gost from $URL" && echo
+echo "1. Downloading gost-linux-${bit}-${VER}.gz to /root/gost from $URL" && echo
 [[ -f "/root/gost" ]] && rm -rf /root/gost
 wget -O - $URL | gzip -d > /root/gost && chmod +x /root/gost
 
