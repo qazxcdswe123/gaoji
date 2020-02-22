@@ -21,9 +21,9 @@ elif cat /proc/version | grep -q -E -i "centos|red hat|redhat"; then
 	release="centos"
 fi
 
-if [[ $(bit) == "x86_64" ]]; then
+if [[ ${bit} == "x86_64" ]]; then
     bit="x64"
-elif [[ $(bit) == "arm-rbpi" ]]; then
+elif [[ ${bit} == "arm-rbpi" ]]; then
     bit="arm"
 else
     echo -e "ASF不支持除x64和arm架构以外的系统，请重装系统吧"
