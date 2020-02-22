@@ -36,7 +36,7 @@ stty erase '^H' && read -p "(默认: 取消):" need
 if [[ ${need} == "1" ]]; then
 	bash <(curl -s -L https://git.io/ss.sh)
 elif [[ ${need} == "2" ]]; then
-	bash tcp.sh
+	wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 elif [[ ${need} == "3" ]]; then
 	wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/fail2ban.sh && bash fail2ban.sh 2>&1 | tee fail2ban.log
 elif [[ ${need} == "4" ]]; then

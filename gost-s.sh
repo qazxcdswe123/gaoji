@@ -3,12 +3,22 @@ Font_color_suffix="\033[0m"
 Green_font_prefix="\033[32m"
 rm -rf /root/gost
 
-METHOD="-L=mws://:80 -L=http2://admin:123456@:8443?probe_resist=code:400&knock=www.cloudfront.com"
+METHOD="-L=mws://:80 -L=socks5+h2://:443"
 METHOD=${METHOD}
-VER=$( wget -qO- https://github.com/ginuerzh/gost/tags | grep -oE -m1 "/tag/v[^\"]*" | cut -dv -f2 )
-URL="https://github.com/ginuerzh/gost/releases/download/v${VER}/gost-linux-amd64-${VER}.gz"
+bit="uname -m"
 
-echo "1. Downloading gost-linux-amd64-${VER}.gz to /root/gost from $URL" && echo
+if [[ $(bit) == "x86_64" ]]; then
+    target="adm64"
+elif [[$(bit) == "arm-rbpi" ]]; then
+    target="armv7"
+else
+    target="386"
+fi
+
+VER=$( wget -qO- https://github.com/ginuerzh/gost/tags | grep -oE -m1 "/tag/v[^\"]*" | cut -dv -f2 )
+URL="https://github.com/ginuerzh/gost/releases/download/v${VER}/gost-linux-${target}-${VER}.gz"
+
+echo "1. Downloading gost-linux-${target}-${VER}.gz to /root/gost from $URL" && echo
 [[ -f "/root/gost" ]] && rm -rf /root/gost
 wget -O - $URL | gzip -d > /root/gost && chmod +x /root/gost
 
