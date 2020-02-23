@@ -16,12 +16,12 @@ check_root(){
 	[[ $EUID != 0 ]] && echo -e "${Error} 当前非ROOT账号(或没有ROOT权限)，无法继续操作，请更换ROOT账号或使用 ${Green_background_prefix}sudo su${Font_color_suffix} 命令获取临时ROOT权限（执行后可能会提示输入当前账号的密码）。" && exit 1
 }
 
-echo -e "Downloading relaysrv ${bit}-${VER}"
+echo -e "Downloading relaysrv ${bit}-v${VER}"
 
-wget https://github.com/syncthing/relaysrv/releases/download/${VER}/strelaysrv-linux-${bit}-${VER}.tar.gz
-tar xzf strelaysrv-linux-${bit}-${VER}.tar.gz
-mv strelaysrv-linux-${bit}-${VER}/strelaysrv /usr/bin/relaysrv
-rm -rf strelaysrv-linux-${bit}-${VER} strelaysrv-linux-${bit}-${VER}.tar.gz
+wget https://github.com/syncthing/relaysrv/releases/download/v${VER}/strelaysrv-linux-${bit}-v${VER}.tar.gz
+tar xzf strelaysrv-linux-${bit}-v${VER}.tar.gz
+mv strelaysrv-linux-${bit}-v${VER}/strelaysrv /usr/bin/relaysrv
+rm -rf strelaysrv-linux-${bit}-v${VER} strelaysrv-linux-${bit}-v${VER}.tar.gz
 useradd relaysrv -s /bin/false
 mkdir /etc/relaysrv
 chown relaysrv /etc/relaysrv
@@ -38,4 +38,4 @@ WantedBy=multi-user.target
 EOF
 
 systemctl enable relaysrv.service && systemctl daemon-reload && systemctl restart relaysrv.service && systemctl status relaysrv -l
-echo && echo -e "use \"systemctl status relaysrv\" for more information" 
+echo && echo -e "Use command \"systemctl status relaysrv\" for more information" 
