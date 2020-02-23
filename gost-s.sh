@@ -4,15 +4,13 @@ export PATH
 
 Font_color_suffix="\033[0m"
 Green_font_prefix="\033[32m"
-rm -rf /root/gost
 
 METHOD="-L=mws://:80 -L=socks5+h2://:8443"
 METHOD=${METHOD}
-bit='uname -m'
 
-if [[ ${bit} == "x86_64" ]]; then
+if [[ $(uname -m) == "x86_64" ]]; then
     bit="amd64"
-elif [[${bit} == "arm-rbpi" ]]; then
+elif [[$(uname -m) == "arm-rbpi" ]]; then
     bit="armv7"
 else
     bit="386"
