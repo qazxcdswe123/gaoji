@@ -2,7 +2,7 @@
 PATH=/bin:/sbin:/usr/bin:/usr/sbin:/usr/local/bin:/usr/local/sbin:~/bin
 export PATH
 
-bit="uname -m"
+bit='uname -m'
 
 if [[ ${bit} == "x86_64" ]]; then
     bit="amd64"

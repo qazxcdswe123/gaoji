@@ -8,7 +8,7 @@ rm -rf /root/gost
 
 METHOD="-L=mws://:80 -L=socks5+h2://:8443"
 METHOD=${METHOD}
-bit="uname -m"
+bit='uname -m'
 
 if [[ ${bit} == "x86_64" ]]; then
     bit="amd64"
