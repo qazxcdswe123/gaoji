@@ -30,7 +30,7 @@ cat <<EOF > /etc/systemd/system/relaysrv.service
 [Unit] 
 Description=Syncthing relay server
 [Service]
-ExecStart=/usr/bin/relaysrv -keys /etc/relaysrv -provided-by="gaoji.fun onekey install"
+ExecStart=/usr/bin/relaysrv -keys /etc/relaysrv -provided-by="gaoji.fun-onekey-install"
 Restart=always
 user=relaysrv
 [Install]
