@@ -11,7 +11,7 @@ METHOD=${METHOD}
 bit="uname -m"
 
 if [[ ${bit} == "x86_64" ]]; then
-    bit="adm64"
+    bit="amd64"
 elif [[${bit} == "arm-rbpi" ]]; then
     bit="armv7"
 else

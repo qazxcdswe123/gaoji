@@ -5,7 +5,7 @@ export PATH
 bit="uname -m"
 
 if [[ ${bit} == "x86_64" ]]; then
-    bit="adm64"
+    bit="amd64"
 else
     bit="386"
 fi
