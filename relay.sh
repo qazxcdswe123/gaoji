@@ -39,3 +39,4 @@ EOF
 
 systemctl enable relaysrv.service && systemctl daemon-reload && systemctl restart relaysrv.service && systemctl status relaysrv -l
 echo && echo -e "Use command \"systemctl status relaysrv\" for more information" 
+echo && echo -e "Go relays.syncthing.net to see if it works"
