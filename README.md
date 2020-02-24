@@ -20,6 +20,7 @@
 - 一键封禁 垃圾邮件(SMAP)/BT/PT
 - 下载Speedtest-cli测速
 - 一键安装gost
+- 一键安装Resilio Sync
 
 ---
 ### 安装:
