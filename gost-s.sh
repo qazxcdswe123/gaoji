@@ -10,7 +10,7 @@ METHOD=${METHOD}
 
 if [[ $(uname -m) == "x86_64" ]]; then
     bit="amd64"
-elif [[$(uname -m) == "arm-rbpi" ]]; then
+elif [[ $(uname -m) == "arm-rbpi" ]]; then
     bit="armv7"
 else
     bit="386"

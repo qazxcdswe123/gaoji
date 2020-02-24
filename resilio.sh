@@ -8,7 +8,7 @@ cp /usr/share/zoneinfo/Asia/Shanghai /etc/localtime
 
 if [[ $(uname -m) == "x86_64" ]]; then
     bit="x64"
-elif [[$(uname -m) == "arm-rbpi" ]]; then
+elif [[ $(uname -m) == "arm-rbpi" ]]; then
     bit="armhf"
 else
     bit="i386"
@@ -17,7 +17,7 @@ fi
 YOUR_IP=$(curl ip.sb)
 URL="https://download-cdn.resilio.com/stable/linux-${bit}/resilio-sync_${bit}.tar.gz"
 
-echo "1. Downloading sync-linux-${bit} to /root/rslsync from $URL"
+echo "1. Downloading sync-linux-${bit} from $URL"
 rm -rf /root/rslsync
 wget -O sync.tar.gz  $URL
 tar -xzf sync.tar.gz  && chmod +x /root/rslsync
