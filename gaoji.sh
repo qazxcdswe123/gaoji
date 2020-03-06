@@ -7,14 +7,14 @@ check_root() {
 }
 echo && echo -e "  你要做什么？
 	
- ${Green_font_prefix}1.${Font_color_suffix} 安装 SS(R)
- ${Green_font_prefix}2.${Font_color_suffix} 安装 BBR(魔改)
+ ${Green_font_prefix}1.${Font_color_suffix} 安装 SS（233boy)
+ ${Green_font_prefix}2.${Font_color_suffix} 安装 BBR（teddysun）
  ${Green_font_prefix}3.${Font_color_suffix} 安装 fail2ban（修改ssh）
  ${Green_font_prefix}4.${Font_color_suffix} 安装 LNMP (网站)
  ${Green_font_prefix}5.${Font_color_suffix} 安装 ASF挂卡(steam)
  ${Green_font_prefix}6.${Font_color_suffix} 安装adbyby（广告过滤） 
  ${Green_font_prefix}7.${Font_color_suffix} 安装宝塔面板 (debian)
- ${Green_font_prefix}8.${Font_color_suffix} 安装V2ray
+ ${Green_font_prefix}8.${Font_color_suffix} 安装V2ray(233boy)
  ${Green_font_prefix}9.${Font_color_suffix} 安装rclone
  ${Green_font_prefix}10.${Font_color_suffix} 安装aria2
  ${Green_font_prefix}11.${Font_color_suffix} 安装Syncthing Relay服务端贡献流量
