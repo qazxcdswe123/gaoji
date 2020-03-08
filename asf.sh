@@ -31,7 +31,7 @@ else
 	exit 1
 fi
 
-if [[ $(release) == "centos" ]]; then
+if [[ ${release} == "centos" ]]; then
     yum update && yum remove libssl1.0.0 && yum install $Dependence -y
 else
     apt-get update && apt-get purge libssl1.0.0 && apt-get install $Dependence -y
