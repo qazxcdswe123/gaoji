@@ -29,8 +29,7 @@ echo && echo -e "  你要做什么？
 echo -e "${Green_font_prefix} [安装前 请注意] ${Font_color_suffix}
 1. 若换内核时长时间卡住请Ctrl+c或者重装系统
 2. Debian 更换内核过程中会提示 [ 是否终止卸载内核 ] ，请选择 ${Green_font_prefix} NO ${Font_color_suffix}
-3. 安装BBR并重启服务器后，需要重新运行脚本 启动BBR
-" && echo
+3. 安装BBR并重启服务器后，需要重新运行脚本 启动BBR" && echo
 stty erase '^H' && read -p "(默认: 取消):" need
 [[ -z "${need}" ]] && echo "已取消..." && exit 1
 if [[ ${need} == "1" ]]; then
