@@ -12,7 +12,7 @@
 - 一键安装 lnmp (网站)
 - 一键安装 ASF挂卡(steam)
 - 一键安装adbyby（广告过滤） 
-- 一键安装宝塔面板 (debian)
+- 一键安装宝塔面板
 - 一键安装V2ray (multi-v2ray)
 - 一键安装rclone
 - 一键安装aria2
@@ -25,12 +25,13 @@
 ---
 ### 安装:
 ``` bash
-wget -N --no-check-certificate https://git.io/fhbeF && chmod +x fhbeF && ./fhbeF
+curl https://git.io/gaoji.sh | bash
 ```
 
 ---
 
 ### 安装后的使用
+
 ``` bash
 gaoji
 ```
