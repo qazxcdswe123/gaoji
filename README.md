@@ -25,7 +25,7 @@
 ---
 ### 安装:
 ``` bash
-curl https://git.io/gaoji.sh | bash
+bash <(curl -s -L https://git.io/gaoji.sh)
 ```
 
 ---
