@@ -31,6 +31,9 @@ Description=gost
 ExecStart=/root/gost $METHOD
 Restart=always
 User=root
+StandardOutput=null
+StandardError=journal
+LogLevelMax=warning
 [Install]
 WantedBy=multi-user.target
 EOF
