@@ -35,7 +35,7 @@ stty erase '^H' && read -p "(默认: 取消):" need
 if [[ ${need} == "1" ]]; then
 	bash <(curl -s -L https://git.io/ss.sh)
 elif [[ ${need} == "2" ]]; then
-	wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
+	bash bbr.sh || wget --no-check-certificate https://github.com/teddysun/across/raw/master/bbr.sh && chmod +x bbr.sh && ./bbr.sh
 elif [[ ${need} == "3" ]]; then
 	wget -N --no-check-certificate https://raw.githubusercontent.com/FunctionClub/Fail2ban/master/fail2ban.sh && bash fail2ban.sh 2>&1 | tee fail2ban.log
 elif [[ ${need} == "4" ]]; then
@@ -43,7 +43,7 @@ elif [[ ${need} == "4" ]]; then
 elif [[ ${need} == "5" ]]; then
 	wget http://raw.githubusercontent.com/qazxcdswe123/gaoji/master/asf.sh && chmod +x asf.sh && bash asf.sh
 elif [[ ${need} == "6" ]]; then
-	wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/adbyby.sh && chmod +x adbyby.sh && bash adbyby.sh
+	bash adbyby.sh || wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/adbyby.sh && chmod +x adbyby.sh && bash adbyby.sh
 elif [[ ${need} == "7" ]]; then
 	curl -sSO http://download.bt.cn/install/install_panel.sh && bash install_panel.sh
 elif [[ ${need} == "8" ]]; then
@@ -51,13 +51,13 @@ elif [[ ${need} == "8" ]]; then
 elif [[ ${need} == "9" ]]; then
 	bash <(wget -qO- https://git.io/gclone.sh)
 elif [[ ${need} == "10" ]]; then
-	wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/aria2.sh && chmod +x aria2.sh && bash aria2.sh
+	bash aria2.sh || wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/aria2.sh && chmod +x aria2.sh && bash aria2.sh
 elif [[ ${need} == "11" ]]; then
-	wget -N --no-check-certificate https://raw.githubusercontent.com/qazxcdswe123/gaoji/master/relay.sh && chmod +x relay.sh && bash relay.sh
+	curl https://raw.githubusercontent.com/qazxcdswe123/gaoji/master/relay.sh | bash
 elif [[ ${need} == "12" ]]; then
-	wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ban_iptables.sh && chmod +x ban_iptables.sh && bash ban_iptables.sh
+	bash ban_iptables.sh || wget -N --no-check-certificate https://raw.githubusercontent.com/ToyoDAdoubi/doubi/master/ban_iptables.sh && chmod +x ban_iptables.sh && bash ban_iptables.sh
 elif [[ ${need} == "13" ]]; then
-	wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py && chmod +x speedtest-cli && ./speedtest-cli
+	./speedtest-cli || wget -O speedtest-cli https://raw.githubusercontent.com/sivel/speedtest-cli/master/speedtest.py && chmod +x speedtest-cli && ./speedtest-cli
 elif [[ ${need} == "14" ]]; then
 	curl https://raw.githubusercontent.com/qazxcdswe123/gaoji/master/gost-s.sh | bash
 elif [[ ${need} == "15" ]]; then
