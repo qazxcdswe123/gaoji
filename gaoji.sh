@@ -22,7 +22,7 @@ echo && echo -e "  你要做什么？
  ${Green_font_prefix}12.${Font_color_suffix} 一键封禁 垃圾邮件(SMAP)/BT/PT
  ${Green_font_prefix}13.${Font_color_suffix} 下载Speedtest-cli测速
  ${Green_font_prefix}14.${Font_color_suffix} 下载gost并按预设参数运行
- ${Green_font_prefix}15.${Font_color_suffix} 仅下载gost
+ ${Green_font_prefix}15.${Font_color_suffix} 下载gost转发管理脚本
  ${Green_font_prefix}16.${Font_color_suffix} 安装Resilio Sync
 
 先使用${Green_font_prefix} screen ${Font_color_suffix}!!!" && echo
