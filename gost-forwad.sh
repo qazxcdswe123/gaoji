@@ -3,7 +3,6 @@ Font_color_suffix="\033[0m"
 Green_font_prefix="\033[32m"
 File="/root/gost"
 sh_ver="1.0.0"
-name="$local_port_to_$remote_address:$remote_port"
 
 Download_gost() {
     if [[ $(uname -m) == "x86_64" ]]; then
@@ -33,11 +32,11 @@ Add_relay(){
 
     cat <<EOF > /etc/systemd/system/$local_port.service
     [Unit]
-    Description=forward_$name
+    Description=forward_$local_port-$remote_address:$remote_port
 
     [Service]
     RuntimeMaxSec=86400
-    ExecStart=/root/gost -L=tcp://:$local_port/$remote_address:remote_port -L=udp://:$local_port/$remote_address:remote_port 
+    ExecStart=/root/gost -L=tcp://:$local_port/$remote_address:$remote_port -L=udp://:$local_port/$remote_address:$remote_port 
     Restart=always
     User=root
     LogLevelMax=warning
@@ -45,6 +44,7 @@ Add_relay(){
     [Install]
     WantedBy=multi-user.target
 EOF
+systemctl enable $local_port.service && systemctl daemon-reload && systemctl restart $local_port.service && systemctl status $local_port -l
 
 else
     exit 1
