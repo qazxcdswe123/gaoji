@@ -62,7 +62,6 @@ Remove_relay(){
     echo "已删除本地$port端口的转发"
 }
 
-<<<<<<< HEAD:gost-forwad.sh
 echo && echo -e "  gost一键转发脚本
 0. 下载/更新gost
  --- gaoji.fun ---
@@ -89,5 +88,3 @@ echo && echo -e "  gost一键转发脚本
 		echo "请输入正确数字 [0-3]"
 		;;
 	esac
-=======
->>>>>>> 7e496ec0edd1f994a484ab16055f855620fbeb35:gost-c.sh
