@@ -2,7 +2,6 @@
 Font_color_suffix="\033[0m"
 Green_font_prefix="\033[32m"
 File="/root/gost"
-sh_ver="1.0.0"
 
 Download_gost() {
     if [[ $(uname -m) == "x86_64" ]]; then
@@ -16,7 +15,7 @@ Download_gost() {
     VER=$( wget -qO- https://github.com/ginuerzh/gost/tags | grep -oE -m1 "/tag/v[^\"]*" | cut -dv -f2 )
     URL="https://github.com/ginuerzh/gost/releases/download/v${VER}/gost-linux-${bit}-${VER}.gz"
 
-    echo "1. Downloading gost-linux-${bit}-${VER}.gz to /root/gost from $URL" && echo
+    echo "${Green_font_prefix}1. Downloading gost-linux-${bit}-${VER} to /root/gost${Font_color_suffix}" && echo
     [[ -f "/root/gost" ]] && rm -rf /root/gost
     wget -O - $URL | gzip -d > /root/gost && chmod +x /root/gost
 }
@@ -67,19 +66,18 @@ Remove_relay(){
 }
 
 echo && echo -e "  gost一键端口转发脚本
-${Green_font_prefix} 0. 下载/更新gost ${Font_color_suffix}
  ----- ${Green_font_prefix} gaoji.fun ${Font_color_suffix} -----
 ${Green_font_prefix} 1. 增加转发 ${Font_color_suffix}
 ${Green_font_prefix} 2. 列出本地已转发端口 ${Font_color_suffix}
 ${Green_font_prefix} 3. 查看端口转发状态 ${Font_color_suffix}
 ${Green_font_prefix} 4. 删除转发 ${Font_color_suffix}
 ————————————" && echo
+if [[ ! -e ${File} ]]; then
+    Download_gost && echo "下载gost中，请稍等......"
+else
 	echo
-	read -e -p " 请输入数字 [0-4]:" num
+	read -e -p " 请输入数字 [1-4]:" num
 	case "$num" in
-		0)
-		Download_gost
-		;;
 		1)
 		Add_relay
 		;;
@@ -93,6 +91,7 @@ ${Green_font_prefix} 4. 删除转发 ${Font_color_suffix}
         Remove_relay
         ;;
 		*)
-		echo "请输入正确数字 [0-4]"
+		echo "请输入正确数字 [1-4]"
 		;;
 	esac
+fi
