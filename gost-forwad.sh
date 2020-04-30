@@ -67,12 +67,12 @@ Remove_relay(){
 }
 
 echo && echo -e "  gost一键端口转发脚本
-0. 下载/更新gost
+${Green_font_prefix} 0. 下载/更新gost ${Font_color_suffix}
  ----- ${Green_font_prefix} gaoji.fun ${Font_color_suffix} -----
-1. 增加转发
-2. 列出本地已转发端口
-3. 查看端口转发状态
-4. 删除转发
+${Green_font_prefix} 1. 增加转发 ${Font_color_suffix}
+${Green_font_prefix} 2. 列出本地已转发端口 ${Font_color_suffix}
+${Green_font_prefix} 3. 查看端口转发状态 ${Font_color_suffix}
+${Green_font_prefix} 4. 删除转发 ${Font_color_suffix}
 ————————————" && echo
 	echo
 	read -e -p " 请输入数字 [0-4]:" num
