@@ -3,6 +3,7 @@ Font_color_suffix="\033[0m"
 Green_font_prefix="\033[32m"
 File="/root/gost"
 sh_ver="1.0.0"
+name="$local_port_to_$remote_address:$remote_port"
 
 Download_gost() {
     if [[ $(uname -m) == "x86_64" ]]; then
@@ -36,26 +37,35 @@ Add_relay(){
     read -e -p "本地:$local_port --> $remote_address:$remote_port" yn
     [[ -z "${yn}" ]] && yn="y"
 	if [[ $yn == [Yy] ]]; then
-    
-cat <<EOF > /etc/systemd/system/$local_port_to_$remote_address:$remote_port.service
-[Unit]
-Description=forward_$local_port_to_$remote_address:$remote_port
 
-[Service]
-RuntimeMaxSec=86400
-ExecStart=/root/gost -L=tcp://:$local_port/$remote_address:remote_port -L=udp://:$local_port/$remote_address:remote_port 
-Restart=always
-User=root
-StandardOutput=null
-StandardError=journal
-LogLevelMax=warning
+    cat <<EOF > /etc/systemd/system/$local_port.service
+    [Unit]
+    Description=forward_$name
 
-[Install]
-WantedBy=multi-user.target
+    [Service]
+    RuntimeMaxSec=86400
+    ExecStart=/root/gost -L=tcp://:$local_port/$remote_address:remote_port -L=udp://:$local_port/$remote_address:remote_port 
+    Restart=always
+    User=root
+    LogLevelMax=warning
+
+    [Install]
+    WantedBy=multi-user.target
 EOF
-    else
-        exit 1
-    fi
+
+else
+    exit 1
+fi
 }
 
+Show_relay(){
+    clear && read -e -p "请输入本地端口: " port
+    systemctl status $port
 }
+
+Remove_relay(){
+    clear && read -e -p "请输入本地端口: " port
+    systemctl stop $port && rm /etc/systemd/system/$port.service
+    echo "已删除本地$port端口的转发"
+}
+
