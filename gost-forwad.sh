@@ -25,12 +25,12 @@ Add_relay(){
     clear && read  -e -p "请输入本地端口: " local_port
     read  -e -p "请输入远程端口: " remote_port
     read  -e -p "请输入转发地址（支持域名ddns）: " remote_address
-    echo "转发信息无误？(y/n)"
-    read -e -p "本地:$local_port --> $remote_address:$remote_port" yn
+    echo "本地:$local_port --> $remote_address:$remote_port"
+    read -e -p "转发信息无误？(y/n)" yn
     [[ -z "${yn}" ]] && yn="y"
 	if [[ $yn == [Yy] ]]; then
 
-    cat <<EOF > /etc/systemd/system/$local_port.service
+    cat <<EOF > /etc/systemd/system/port$local_port.service
     [Unit]
     Description=forward_$local_port-$remote_address:$remote_port
 
@@ -44,7 +44,7 @@ Add_relay(){
     [Install]
     WantedBy=multi-user.target
 EOF
-systemctl enable $local_port.service && systemctl daemon-reload && systemctl restart $local_port.service && systemctl status $local_port -l
+systemctl enable port$local_port.service && systemctl daemon-reload && systemctl restart port$local_port.service && systemctl status port$local_port -l
 
 else
     exit 1
@@ -52,25 +52,30 @@ fi
 }
 
 Show_relay(){
+    systemctl list-unit-files --type=service | grep -E "port[0-9]"
+}
+
+Show_status(){
     clear && read -e -p "请输入本地端口: " port
-    systemctl status $port
+    systemctl status port$port
 }
 
 Remove_relay(){
     clear && read -e -p "请输入本地端口: " port
-    systemctl stop $port && rm /etc/systemd/system/$port.service
+    systemctl stop port$port && rm /etc/systemd/system/port$port.service
     echo "已删除本地$port端口的转发"
 }
 
-echo && echo -e "  gost一键转发脚本
+echo && echo -e "  gost一键端口转发脚本
 0. 下载/更新gost
- --- gaoji.fun ---
+ ----- ${Green_font_prefix} gaoji.fun ${Font_color_suffix} -----
 1. 增加转发
-2. 列出本地端口
-3. 删除转发
+2. 列出本地已转发端口
+3. 查看端口转发状态
+4. 删除转发
 ————————————" && echo
 	echo
-	read -e -p " 请输入数字 [0-3]:" num
+	read -e -p " 请输入数字 [0-4]:" num
 	case "$num" in
 		0)
 		Download_gost
@@ -82,9 +87,12 @@ echo && echo -e "  gost一键转发脚本
 		Show_relay
 		;;
 		3)
-		Remove_relay
+		Show_status
 		;;
+        4)
+        Remove_relay
+        ;;
 		*)
-		echo "请输入正确数字 [0-3]"
+		echo "请输入正确数字 [0-4]"
 		;;
 	esac
