@@ -73,7 +73,7 @@ ${Green_font_prefix} 3. 查看端口转发状态 ${Font_color_suffix}
 ${Green_font_prefix} 4. 删除转发 ${Font_color_suffix}
 ————————————" && echo
 if [[ ! -e ${File} ]]; then
-    echo "下载gost中，请稍等......" && Download_gost
+    echo "下载gost中，请稍等......" && Download_gost && bash gost-c.sh
 else
 	echo
 	read -e -p " 请输入数字 [1-4]:" num
