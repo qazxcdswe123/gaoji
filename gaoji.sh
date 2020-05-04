@@ -61,7 +61,7 @@ elif [[ ${need} == "13" ]]; then
 elif [[ ${need} == "14" ]]; then
 	curl https://raw.githubusercontent.com/qazxcdswe123/gaoji/master/gost-s.sh | bash
 elif [[ ${need} == "15" ]]; then
-	curl https://raw.githubusercontent.com/qazxcdswe123/gaoji/master/gost-c.sh | bash
+	wget -N --no-check-certificate https://raw.githubusercontent.com/qazxcdswe123/gaoji/master/gost-c.sh && chmod +x gost-c.sh && bash gost-c.sh
 elif [[ ${need} == "16" ]]; then
 	curl https://raw.githubusercontent.com/qazxcdswe123/gaoji/master/resilio.sh | bash
 else
